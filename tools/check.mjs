@@ -95,6 +95,17 @@ function main() {
     const SKIP = /^(방법|헌법|위법|불법|입법|사법|법정|임의규정|강행규정)$/;
     for (const b of rest.matchAll(/[가-힣]+(?:법률|법|규정|고시)(?=[\s,·()의에상은이을를과와로도]|$)/g)) if (!SKIP.test(b[0])) errors.push(`「」 없는 법령·규정명: ${b[0]}`);
     for (const b of rest.matchAll(/(?:관한|위한) 법률/g)) errors.push(`「」 없는 법령명: …${b[0]}`);
+    // R10: K·F 모듈은 「」 법령마다 조문(제N조·제N장) 표기가 뒤따라야 한다(규정·고시·계약서는 제외).
+    const idm = m.index !== undefined ? mapBody.slice(0, m.index).match(/^### ([PLAKFX]\d+)/gm) : null;
+    const curId = idm ? idm.at(-1).slice(4) : "";
+    if (/^[KF]\d+$/.test(curId)) {
+      const parts = m[1].split("「").slice(1);
+      for (const part of parts) {
+        const [nm, after] = part.split("」");
+        if (/(규정|고시|계약서|해설서)$/.test(nm)) continue;
+        if (!/제\d+(조|장)/.test(after || "")) errors.push(`${curId}: 「${nm}」에 조문 표기 없음`);
+      }
+    }
   }
 
   // R11: tutor/sources.md의 「읽는 법」은 실측으로 채워져 있어야 한다.
