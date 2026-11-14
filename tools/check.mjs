@@ -40,7 +40,7 @@ function parseCurriculum(text) {
     const dom = fields["국내 근거"] || "";
     if (dom.startsWith("법정 기준 없음")) {
       if (LEGAL_REQUIRED(id)) problems.push(`${id}: 법·제도 모듈은 「법정 기준 없음」 불가`);
-      else if (dom !== "법정 기준 없음" && !dom.startsWith("법정 기준 없음 — 국내 맥락: ")) problems.push(`${id}: 「법정 기준 없음 — 국내 맥락: …」 형식 오류`);
+      else if (!dom.startsWith("법정 기준 없음 — 국내 맥락: ")) problems.push(`${id}: 「법정 기준 없음 — 국내 맥락: …」 형식 오류`);
     } else if (dom && !/(법|규정|공고|기관|진흥원|중소벤처기업부|거래소|시스템|양식)/.test(dom)) problems.push(`${id}: 국내 근거에 법령·기관이 없음`);
     for (const r of (fields["경계·연결"] || "").matchAll(/go-[a-z-]+/g)) boundaryRepos.add(`${id}:${r[0]}`);
     if (fields["목표"] && !LEVELS.some((l) => fields["목표"].startsWith(`${l} — `))) problems.push(`${id}: 목표 수준 형식 오류`);

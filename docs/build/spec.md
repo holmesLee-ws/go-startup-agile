@@ -21,15 +21,16 @@
 
 | 주제 | 여기서 다루는 깊이 | 깊게 다루는 곳 |
 |---|---|---|
-| 기업가치 산정(VC method·DCF·멀티플) | 프리·포스트머니 산술과 희석까지 | go-valuation |
+| 기업가치 산정(VC method·DCF·멀티플), 여러 엑싯 시나리오의 배분 비교 | 프리·포스트머니 산술과 희석, 1배 비참가 청산우선권 단일 시나리오까지 | go-valuation |
 | 스크럼 이벤트 운영·일정·WBS | 경영 리듬과 의사결정 구조로서의 스크럼 | go-project-management |
 | 전사 전략·BSC·OKR 캐스케이드 | 초기 조직의 OKR과 실험 연결 | go-strategy |
 | 세그먼트·포지셔닝·채널·그로스 | 고객 발견과 PMF까지 | go-marketing |
 | 스톡옵션·엔젤투자 과세 | 제도가 선택에 주는 영향의 존재만 | go-tax |
-| RCPS·전환사채 회계 분류 | 투자 수단의 권리 구조까지 | go-accounting |
+| RCPS·전환사채 회계 분류, 주식기준보상 비용, 보조금 회계 | 투자 수단의 권리 구조까지 | go-accounting |
 | 이사회·주총·회사법 총론, 계약법 | 투자계약·주주간계약 조항의 의미까지 | go-compliance-and-legal |
 | 근로계약·노동법 | 첫 채용의 의사결정까지 | go-hr |
-| 자금 관리·현금흐름, 외국환 신고 실무 | 런웨이 산술, 해외 구조 선택 시 신고가 있다는 사실까지 | go-finance |
+| 조달 수단 선택 일반·자본 비용, 전환 조건별 지분·현금 효과의 정밀 계산 | 창업자의 라운드 결정에 필요한 캡테이블 계산까지 | go-finance |
+| 자금 관리·현금흐름·차입 자금, 외국환 신고 실무 | 런웨이 산술, 해외 구조 선택 시 신고가 있다는 사실까지 | go-treasury |
 | 출시 후 PM 운영(PRD·RICE·Kano·로드맵·리텐션 분석) | 0→1 단계의 고객 발견·MVP·PMF 판단까지 | go-product |
 | A/B 통계·인과추론·North Star·KPI 트리 | 코호트로 실험을 판정하는 데까지 | go-data-analytics |
 | 파이프라인·리드 관리·제안·클로징 | 창업자가 첫 고객을 찾는 데까지 | go-sales |
@@ -65,7 +66,7 @@
 - go-develop와 같은 런타임 의존 없는 하네스다. `CLAUDE.md`, `tutor/*.md`, `.claude/skills/*`, `.claude/settings.json`, `curriculum/map.md`, `learner-template/`, `.gitignore`, `README.md`, `docs/build/`. 관리자용 검사기 `tools/check.mjs` 하나만 예외다.
 - go-develop에 더하는 튜터 규칙 파일은 `tutor/sources.md` 하나다. 법령·제도 인용, 최신성 확인, 자문 아님 고지, 경계 안내를 담는다.
 - 성숙도 수준은 go-develop과 같은 4단계(Explain·Apply·Evaluate·Develop)를 쓴다. 창업 의사결정은 대부분 Evaluate(선택지 비교·근거 결정)에 걸리므로, K·F 영역은 Evaluate를, 졸업은 Develop을 목표로 둔다.
-- 졸업 프로젝트는 하나의 실행 패키지이고, 학습자가 산출물 중 최소 둘을 고른다. 산출물은 `learner/work/`에 Markdown으로 둔다(HTML은 `learner/studio/`).
+- 졸업 프로젝트는 하나의 실행 패키지이고, 학습자가 산출물 중 최소 둘을 고른다. Develop 목표는 X1 하나다(F5는 Apply로 뼈대까지, 완성은 X1). 산출물은 `learner/work/`에 Markdown으로 둔다(HTML은 `learner/studio/`).
 - 법령 조문 번호는 커리큘럼 지도에만 두고, 튜터는 세션 중 다시 확인한 뒤 쓴다. 지원사업(예비창업패키지·TIPS 등)은 해마다 공고가 바뀌므로 지도에는 사업 이름과 운영 기관만 적고 조건은 적지 않는다.
 
 ## 확인한 플랫폼 사실

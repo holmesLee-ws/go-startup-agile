@@ -13,7 +13,7 @@
     "module": null,
     "path": null,
     "pending_probe": null,
-    "deferred": null
+    "deferred": []
   },
   "modules": {},
   "gaps": [],
@@ -25,5 +25,6 @@
     "history": []
   },
   "preferences": [],
-  "sources": []
+  "sources": [],
+  "work": []
 }
