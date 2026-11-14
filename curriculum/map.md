@@ -252,7 +252,7 @@
 - 핵심 질문: 미국 투자자를 만나려면 언제, 어떤 구조로 미국 법인을 둬야 하는가?
 - 목표: Evaluate — 한국 법인 유지, 미국 자회사, Delaware 모회사 전환(flip)을 비용·투자·규제로 비교한다.
 - 만들어 볼 것: 내 회사의 해외 구조 선택 메모와 확인할 신고·절차 목록
-- 국내 근거: 「외국환거래법」 해외직접투자 신고(세부는 기획재정부 고시 외국환거래규정)
+- 국내 근거: 「외국환거래법」 해외직접투자 신고(세부는 기획재정부 고시 「외국환거래규정」)
 - 글로벌 비교: Delaware General Corporation Law, flip 구조
 - 경계·연결: 외국환 신고 실무는 go-treasury, 국제조세는 go-tax, 해외 확장 전략은 go-strategy(G5)
 - 근거: 외국환거래법, DGCL
@@ -262,7 +262,7 @@
 - 핵심 질문: 투자자는 언제 어떻게 돈을 돌려받으려 하고, 그것이 지금의 내 결정을 어떻게 묶는가?
 - 목표: Evaluate — M&A·상장·구주 매각 경로를 시점·조건·창업자 영향으로 비교해 지금 할 일을 정한다.
 - 만들어 볼 것: 내 회사의 회수 시나리오 두 개와 지금 계약·지배구조에서 미리 챙길 것
-- 국내 근거: 한국거래소 코스닥시장 상장규정의 기술성장기업 상장 특례, 「벤처투자 촉진에 관한 법률」의 벤처투자조합 규정(존속 기간은 조합 규약 확인)
+- 국내 근거: 한국거래소 「코스닥시장 상장규정」의 기술성장기업 상장 특례, 「벤처투자 촉진에 관한 법률」의 벤처투자조합 규정(존속 기간은 조합 규약 확인)
 - 글로벌 비교: 미국 M&A 중심 회수, NVCA 모델 문서의 drag-along·registration rights
 - 경계·연결: M&A 가치평가는 go-valuation, 성장 전략으로서의 M&A는 go-strategy(G2), 공모·상장 공시는 go-finance(K2)
 - 근거: 한국거래소, NVCA
@@ -296,20 +296,26 @@
 - US Code Title 26 §83(b)·§422(ISO)·§409A·§1202(QSBS) — 읽기 사본 <https://www.law.cornell.edu/uscode/text/26/83>, <https://www.law.cornell.edu/uscode/text/26/422>, <https://www.law.cornell.edu/uscode/text/26/409A>, <https://www.law.cornell.edu/uscode/text/26/1202> (2026-11-14 조회, Cornell LII 비공식 사본 — 공식본 govinfo.gov)
 - SEC Regulation D §230.501 accredited investor — <https://www.ecfr.gov/current/title-17/chapter-II/part-230/subject-group-ECFR6e651a4c86c0174/section-230.501> (2026-11-14 조회)
 - SEC Regulation Crowdfunding(17 CFR Part 227) — <https://www.ecfr.gov/current/title-17/chapter-II/part-227> (2026-11-14 조회)
-- SBIR·STTR — <https://www.sbir.gov/about> (2026-11-14 조회)
+- SBIR·STTR — <https://www.sbir.gov/about> (2026-11-14 조회, 2026-10-16 기준 Phase I·II 지급 한도 공지가 있어 운영 중)
+- Delaware Limited Liability Company Act(Title 6, Chapter 18) — <https://delcode.delaware.gov/title6/c018/index.html> (2026-11-14 조회), US Code Title 26 Subchapter C — <https://www.law.cornell.edu/uscode/text/26/subtitle-A/chapter-1/subchapter-C> (2026-11-14 조회, LII 비공식 사본)
+- Y Combinator, "How to build your seed round pitch deck" — <https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck> (2026-11-14 조회)
+- Sequoia Capital, "Writing a Business Plan" — <https://sequoiacap.com/article/writing-a-business-plan/> (2026-11-14 조회)
 
 ### 서적·논문(모듈 「근거」 줄)
 
 - Blank, S. & Dorf, B. (2012). *The Startup Owner's Manual*. K&S Ranch.
-- Ries, E. (2011). *The Lean Startup*. Crown Business. / Ries, E. (2017). *The Startup Way*. Currency.
+- Ries, E. (2011). *The Lean Startup*. Crown Business.
+- Ries, E. (2017). *The Startup Way*. Currency.
 - Maurya, A. (2012). *Running Lean* (2nd ed.). O'Reilly.
-- Fitzpatrick, R. (2013). *The Mom Test*.
+- Fitzpatrick, R. (2013). *The Mom Test*. 자가출판(CreateSpace).
 - Moore, G. A. (2014). *Crossing the Chasm* (3rd ed.). Harper Business.
 - Osterwalder, A. & Pigneur, Y. (2010). *Business Model Generation*. Wiley.
 - Bland, D. J. & Osterwalder, A. (2019). *Testing Business Ideas*. Wiley.
 - Croll, A. & Yoskovitz, B. (2013). *Lean Analytics*. O'Reilly.
-- Andreessen, M. (2007). "The only thing that matters." pmarchive.com.
-- Ellis, S. (2010). Sean Ellis PMF 설문(「매우 실망」 40% 기준)의 원 출처는 세션에서 확인 뒤 인용한다.
+- Andreessen, M. (2007-06-25). "The only thing that matters" (Guide to Startups part 4) — <https://pmarchive.com/guide_to_startups_part4.html> (2026-11-14 조회)
+- Sean Ellis PMF 설문 — 원 블로그는 확인하지 못해, Vohra, R. "How Superhuman Built an Engine to Find Product/Market Fit", First Round Review의 소개로 인용한다: <https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit/> (2026-11-14 조회. 「very disappointed」 비율 40%, 약 100개 스타트업 비교)
+- McClure, D. (2007). "Startup Metrics for Pirates: AARRR!" 발표 자료 — 원문 페이지가 자동 열람을 막아 확인하지 못했다. 개념 이름만 쓴다.
+- Osterwalder, A., Pigneur, Y., Bernarda, G. & Smith, A. (2014). *Value Proposition Design*. Wiley.
 - Grove, A. S. (1983). *High Output Management*. Random House.
 - Doerr, J. (2018). *Measure What Matters*. Portfolio.
 - Wasserman, N. (2012). *The Founder's Dilemmas*. Princeton University Press.

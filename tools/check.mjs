@@ -61,13 +61,15 @@ function parseCurriculum(text) {
 }
 
 function findVisualAssets(files) {
-  const allowedJs = /^tools\/.*\.m?js$/;
-  return files.filter((f) => /\.(html?|css|svg|png|jpe?g|gif|webp|avif)$/i.test(f) || (/\.m?js$/i.test(f) && !allowedJs.test(f)));
+  const allowedJs = /^tools\/[^/]+\.mjs$/;
+  return files.filter((f) => /\.(html?|xhtml|css|svgz?|png|jpe?g|gif|webp|avif|ico|bmp)$/i.test(f) || (/\.(m?js|cjs|jsx|tsx?)$/i.test(f) && !allowedJs.test(f)));
 }
 
 function findTemplateMarkup(name, text) {
   const hits = [];
-  for (const m of text.matchAll(/(```|~~~)[\s\S]*?\1/g)) if (/<(!doctype|html|svg|style|canvas|script)\b/i.test(m[0])) hits.push(name);
+  const MARK = /<(!doctype|html|svg|style|canvas|script)\b/i;
+  for (const m of text.matchAll(/(```|~~~)[\s\S]*?\1/g)) if (MARK.test(m[0])) hits.push(name);
+  for (const line of text.split("\n")) if (/^( {4}|\t)/.test(line) && MARK.test(line)) { hits.push(`${name}(들여쓰기 블록)`); break; }
   return hits;
 }
 
@@ -85,12 +87,24 @@ function main() {
 
   // R11: 「국내 근거」의 법령명은 「」로 감싼 국가법령정보센터 정식 명칭이고, 출처 절에 같은 이름으로 URL·조회일이 있어야 한다.
   const [mapBody, srcText = ""] = mapText.split(/^## 출처/m);
-  const srcNames = new Set([...srcText.matchAll(/^- 「([^」]+)」.*https?:\/\/.*\d{4}-\d{2}-\d{2}/gm)].map((m) => m[1]));
+  const srcNames = new Set();
+  for (const line of srcText.split("\n")) if (/https?:\/\//.test(line) && /\d{4}-\d{2}-\d{2}/.test(line)) for (const n of line.matchAll(/「([^」]+)」/g)) srcNames.add(n[1]);
   for (const m of mapBody.matchAll(/^- 국내 근거: (.+)$/gm)) {
     for (const n of m[1].matchAll(/「([^」]+)」/g)) if (!srcNames.has(n[1])) errors.push(`출처 절에 없는 법령: ${n[1]}`);
-    const bare = m[1].replace(/「[^」]+」/g, "").match(/[가-힣]{1,}법(?=[\s,·(의에상률]|$)/);
-    if (bare && !/^(방법|법정)/.test(bare[0])) errors.push(`「」 없는 법령명: ${bare[0]}`);
+    const rest = m[1].replace(/「[^」]+」/g, "□");
+    for (const b of rest.matchAll(/[가-힣]+(?:법률|법|규정|고시)(?=[\s,·()의에상은이]|$)/g)) if (b[0] && !/^(방법|법정|외국환거래규정에|관련|투자|조합|벤처투자조합)$/.test(b[0]) && !/^(방법|법정)/.test(b[0])) errors.push(`「」 없는 법령·규정명: ${b[0]}`);
   }
+
+  // R11: tutor/sources.md의 「읽는 법」은 실측으로 채워져 있어야 한다.
+  const tsrc = read("tutor/sources.md");
+  const howto = (tsrc.split("## 읽는 법")[1] || "").split(/^## /m)[0];
+  if (!howto.trim() || /채운다\)/.test(howto)) errors.push("tutor/sources.md 「읽는 법」이 비어 있음");
+
+  // R13: tutor/sources.md 경계 표와 spec 경계 표는 같은 행이어야 한다.
+  const rows = (t) => new Set([...t.matchAll(/^\| ([^|]+) \| [^|]+ \| (go-[a-z-]+) \|$/gm)].map((m) => `${m[1].trim()}→${m[2]}`));
+  const specRows = rows(table), tutorRows = rows((tsrc.split("## 다른 go-* 영역과의 경계")[1] || ""));
+  for (const r of specRows) if (!tutorRows.has(r)) errors.push(`sources.md 경계 표에 없는 행: ${r}`);
+  for (const r of tutorRows) if (!specRows.has(r)) errors.push(`spec 경계 표에 없는 행: ${r}`);
 
   // R11: 출처 절은 URL과 조회일을 담는다.
   const sources = mapText.split(/^## 출처/m)[1] || "";
