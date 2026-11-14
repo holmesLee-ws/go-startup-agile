@@ -70,7 +70,7 @@
 - 만들어 볼 것: 내 사업의 핵심 지표 하나와 코호트 표로 본 실험 판정
 - 국내 근거: 법정 기준 없음 — 국내 맥락: 정부 지원사업의 성과지표(매출·고용 등)는 협약 의무이지만, 그대로 내부 판단 지표로 쓰면 허영 지표가 되기 쉽다
 - 글로벌 비교: 혁신 회계와 허영 지표(Ries), AARRR(McClure)
-- 경계·연결: A/B 통계·North Star·KPI 트리는 go-data-analytics, 런웨이 산술 이상의 자금 관리는 go-finance
+- 경계·연결: A/B 통계·North Star·KPI 트리는 go-data-analytics, 런웨이 산술 이상의 자금 관리는 go-treasury(W1)
 - 근거: Ries(2011), Croll·Yoskovitz(2013)
 
 ### L3 · 제품-시장 적합성(PMF) 판단
