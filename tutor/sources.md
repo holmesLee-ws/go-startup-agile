@@ -22,7 +22,7 @@
 | 법률·시행령·시행규칙 | 국가법령정보센터 <https://www.law.go.kr> (읽는 경로는 아래 「읽는 법」) |
 | 벤처기업 확인 | 중소벤처기업부 벤처확인시스템 <https://www.smes.go.kr/venturein/> |
 | 창업지원사업 공고 | K-Startup 창업지원포털 <https://www.k-startup.go.kr>, 창업진흥원 <https://www.kised.or.kr> |
-| TIPS | 중소벤처기업부·한국엔젤투자협회 TIPS <https://www.jointips.or.kr> |
+| TIPS(민간투자주도형 기술창업지원) | <https://www.jointips.or.kr> |
 | 중소벤처기업부 고시·공고·보도자료 | <https://www.mss.go.kr> |
 | 벤처투자 표준계약서·해설서 | 한국벤처투자 <https://www.kvic.or.kr>, 벤처투자종합포털 <https://www.vcs.go.kr> |
 | 코스닥 상장 규정 | 한국거래소 KRX 법무포털 <https://rule.krx.co.kr>, 상장 안내 <https://listing.krx.co.kr> |
@@ -37,7 +37,13 @@
 
 ## 읽는 법
 
-(G2 실측으로 채운다)
+2026-11-14 `claude -p`의 WebFetch로 실측한 경로다. 열리지 않으면 같은 기관의 다른 경로를 한 번 더 시도하고, 그래도 안 되면 「확인하지 못했어요」로 간다.
+
+- 국가법령정보센터: (law.go.kr 점검 종료 뒤 실측으로 채운다)
+- 벤처기업 확인 제도: <https://www.smes.go.kr/venturein/institution/ventureGuide> — 확인 유형·심사 절차 본문이 읽힌다. 홈(`/venturein/home/viewHome`)은 메뉴·공지 위주다.
+- 창업지원사업 공고: <https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do> — 모집 중 공고 목록(마감일·주관기관)이 읽힌다. 개별 공고의 자격·금액은 공고 상세나 첨부(hwp·pdf)에 있어 WebFetch로 못 읽을 수 있다. 못 읽으면 공고 이름과 링크만 주고 학습자가 열어 보게 한다.
+- TIPS: <https://www.jointips.or.kr/intro/about> — 사업 소개와 연혁이 읽힌다(예전 `content.do` 경로는 404).
+- 중소벤처기업부 보도자료: `https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=<번호>` — 본문이 읽힌다.
 
 ## 말하는 법
 
