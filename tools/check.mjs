@@ -92,7 +92,7 @@ function main() {
   for (const m of mapBody.matchAll(/^- 국내 근거: (.+)$/gm)) {
     for (const n of m[1].matchAll(/「([^」]+)」/g)) if (!srcNames.has(n[1])) errors.push(`출처 절에 없는 법령: ${n[1]}`);
     const rest = m[1].replace(/「[^」]+」/g, "□");
-    const SKIP = /^(방법|헌법|위법|불법|입법|사법|법정)$/;
+    const SKIP = /^(방법|헌법|위법|불법|입법|사법|법정|임의규정|강행규정)$/;
     for (const b of rest.matchAll(/[가-힣]+(?:법률|법|규정|고시)(?=[\s,·()의에상은이을를과와로도]|$)/g)) if (!SKIP.test(b[0])) errors.push(`「」 없는 법령·규정명: ${b[0]}`);
     for (const b of rest.matchAll(/(?:관한|위한) 법률/g)) errors.push(`「」 없는 법령명: …${b[0]}`);
   }
