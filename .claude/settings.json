@@ -18,12 +18,10 @@
       "Bash(xdg-open *..*)",
       "Bash(start *..*)",
       "PowerShell(Start-Process *..*)",
-      "Bash(open * -*)",
-      "Bash(open *://*)",
-      "Bash(xdg-open *://*)",
-      "Bash(start *://*)",
-      "PowerShell(Start-Process *://*)",
-      "PowerShell(Start-Process * -*)"
+      "Bash(open * *)",
+      "Bash(xdg-open * *)",
+      "Bash(start * * *)",
+      "PowerShell(Start-Process * *)"
     ]
   }
 }

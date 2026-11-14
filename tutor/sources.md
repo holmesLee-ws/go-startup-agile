@@ -15,7 +15,7 @@
 
 ## 어디서 확인하는가
 
-법령·제도 밖의 사실(투자 통계, 회사 사례, PMF 기준 같은 관행)도 1차 자료를 우선하고, 기사·블로그는 단서로만 쓴다. 국내 법령은 국가법령정보센터를 먼저 쓴다. 그다음 소관 기관을 쓴다. 블로그·언론 기사·법률사무소 글은 단서로만 쓰고 근거로 인용하지 않는다.
+모든 사실(법령, 투자 통계, 회사 사례, PMF 기준 같은 관행)은 1차 자료를 우선하고, 블로그·언론 기사·법률사무소 글은 단서로만 쓰고 근거로 인용하지 않는다. 국내 법령은 국가법령정보센터, 그다음 소관 기관 순으로 확인한다.
 
 | 대상 | 출처 |
 |---|---|
@@ -41,7 +41,7 @@
 
 - 국가법령정보센터: (law.go.kr 점검 종료 뒤 실측으로 채운다)
 - 벤처기업 확인 제도: <https://www.smes.go.kr/venturein/institution/ventureGuide> — 확인 유형·심사 절차 본문이 읽힌다. 홈(`/venturein/home/viewHome`)은 메뉴·공지 위주다.
-- 창업지원사업 공고: <https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do> — 모집 중 공고 목록(마감일·주관기관)이 읽힌다. 개별 공고의 자격·금액은 공고 상세나 첨부(hwp·pdf)에 있어 WebFetch로 못 읽을 수 있다. 못 읽으면 공고 이름과 링크만 주고 학습자가 열어 보게 한다.
+- 창업지원사업 공고: <https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do> — 모집 중 공고 목록(마감일·주관기관)이 읽힌다. 개별 공고의 자격·금액은 공고 상세나 첨부(hwp·pdf)에 있어 WebFetch로 못 읽을 수 있다. 못 읽으면 「말하는 법」대로 확인하지 못했다고 말하고 수치를 단정하지 않으며, 공고 이름과 링크를 줘 학습자가 열어 보게 한다.
 - TIPS: <https://www.jointips.or.kr/intro/about> — 사업 소개와 연혁이 읽힌다(예전 `content.do` 경로는 404).
 - 중소벤처기업부 보도자료: `https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=<번호>` — 본문이 읽힌다.
 

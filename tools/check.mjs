@@ -41,7 +41,7 @@ function parseCurriculum(text) {
     if (dom.startsWith("법정 기준 없음")) {
       if (LEGAL_REQUIRED(id)) problems.push(`${id}: 법·제도 모듈은 「법정 기준 없음」 불가`);
       else if (!dom.startsWith("법정 기준 없음 — 국내 맥락: ")) problems.push(`${id}: 「법정 기준 없음 — 국내 맥락: …」 형식 오류`);
-    } else if (dom && !/(법|규정|공고|기관|진흥원|중소벤처기업부|거래소|시스템|양식)/.test(dom)) problems.push(`${id}: 국내 근거에 법령·기관이 없음`);
+    } else if (dom && !/(「[^」]+」|규정|고시|공고|기관|진흥원|중소벤처기업부|거래소|시스템|양식)/.test(dom)) problems.push(`${id}: 국내 근거에 법령·기관이 없음`);
     for (const r of (fields["경계·연결"] || "").matchAll(/go-[a-z-]+/g)) boundaryRepos.add(`${id}:${r[0]}`);
     if (fields["목표"] && !LEVELS.some((l) => fields["목표"].startsWith(`${l} — `))) problems.push(`${id}: 목표 수준 형식 오류`);
     const prereq = !fields["선수"] || fields["선수"] === "없음" ? [] : fields["선수"].split(",").map((s) => s.trim());
@@ -92,7 +92,9 @@ function main() {
   for (const m of mapBody.matchAll(/^- 국내 근거: (.+)$/gm)) {
     for (const n of m[1].matchAll(/「([^」]+)」/g)) if (!srcNames.has(n[1])) errors.push(`출처 절에 없는 법령: ${n[1]}`);
     const rest = m[1].replace(/「[^」]+」/g, "□");
-    for (const b of rest.matchAll(/[가-힣]+(?:법률|법|규정|고시)(?=[\s,·()의에상은이]|$)/g)) if (b[0] && !/^(방법|법정|외국환거래규정에|관련|투자|조합|벤처투자조합)$/.test(b[0]) && !/^(방법|법정)/.test(b[0])) errors.push(`「」 없는 법령·규정명: ${b[0]}`);
+    const SKIP = /^(방법|헌법|위법|불법|입법|사법|법정)$/;
+    for (const b of rest.matchAll(/[가-힣]+(?:법률|법|규정|고시)(?=[\s,·()의에상은이을를과와로도]|$)/g)) if (!SKIP.test(b[0])) errors.push(`「」 없는 법령·규정명: ${b[0]}`);
+    for (const b of rest.matchAll(/(?:관한|위한) 법률/g)) errors.push(`「」 없는 법령명: …${b[0]}`);
   }
 
   // R11: tutor/sources.md의 「읽는 법」은 실측으로 채워져 있어야 한다.
